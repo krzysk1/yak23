@@ -1,0 +1,204 @@
+<[file][][]
+    <[object][][]
+        <[int][Version][210]>
+        <[vec32array][ContactSpheres][ (3.217 0 -1.692 0.04) (0.651 0.99 -1.627 0.04) (0.651 -0.99 -1.627 0.04) ]>
+        <[string8][DisplayName][Yakovlev Yak 23]>
+        <[string8][DescriptionTextEN][The Yakovlev Yak-23, NATO reporting name "Flora" was a jet fighter developed in the USSR in the 1940s and used in early 1950s. (from Wikipedia)#Converted from FlightGear by krzysk(at)wp.pl, 3D model by Emmanuel Baranger (3D/FDM).]>
+        <[float64][WingSpan][8.7]>
+        <[float64][Mass][1975.8]>
+        <[float64][MinimumSpeed][50]>
+        <[float64][ApproachSpeed][100]>
+        <[float64][CruiseSpeed]  [450]>
+        <[float64][MaximumSpeed] [765]>
+        <[tmvector2d][FlapSpeedRange][ 50 62.5 ]>
+        <[tmvector2d][NormalSpeedRange][ 50 225 ]>
+        <[tmvector2d][CautionSpeedRange][ 225 765 ]>
+        <[float64][MaximumAltitude][23400]>
+        <[float64][CruiseAltitude] [19500]>
+        <[float64][QSpan][8.7]>
+        <[float64][QMass][1975.8]>
+        <[float64][QSpeed][450]>
+        <[float64][QPower][0]>
+        <[float64][QThrust][NaN]>
+        <[float64][QRange][300000.0]>
+        <[float64][QRatio][0.0]>
+        <[float64][QBuild][1300]>
+        <[float64][QVirgin][1972]>
+        <[bool][Airplane][true]>
+        <[bool][Flaps][true]>
+        <[bool][Jet][true]>
+        <[bool][Retracts][true]>
+        <[string8][Pilot][]>
+    >
+>
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+
+<!--  Yakovlev Yak-23
+
+      2014 Emmanuel BARANGER (Helijah)
+ 
+     sources      : http://en.wikipedia.org/wiki/Yakovlev_Yak-23
+
+     Wingspan     :  8.73 m                           (   28 ft  8 in )
+     Lenght       :  8.12 m                           (   26 ft  8 in )
+     Height       :  3.31 m                           (   10 ft 10 in )
+     Weight       :  1980 kg                          ( 4356 lb       )
+     Engines      : 1 x Klimov RD-500 turbojet        ( 3500 lbf      )
+     Max speed    :   923 km/h                        (  498.38 kt    )
+-->
+
+<airplane mass="4356">
+
+  <approach speed="100" aoa="6" fuel="0.3">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.3"/>
+    <control-setting axis="/controls/flight/flaps" value="1"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+    <solve-weight idx="0" weight="170"/>
+  </approach>
+
+  <cruise speed="450" alt="19500" fuel="0.7">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="1"/>
+    <control-setting axis="/controls/flight/flaps" value="0.0"/>
+    <control-setting axis="/controls/gear/gear-down" value="0"/>
+    <solve-weight idx="0" weight="170"/>
+  </cruise>
+
+  <cockpit x="-0.33445" y="0" z="0.37941"/>
+
+  <!-- Fuselage -->
+  <fuselage ax="4.05605" ay="0" az="-0.49296" bx="-4.03742" by="0" bz="0.14009" width="1.130" taper="0.5" midpoint="0.40"/>
+
+  <!-- Engine -->
+  <fuselage ax="4.05605" ay="0" az="-0.49296" bx="-0.54214" by="0" bz="-0.83476" width="0.75" taper="0.8" midpoint="0.50"/>
+
+  <wing x="0.43059" y="0.54829" z="-0.47447"
+        chord="2.167" 
+        length="3.8" 
+        taper="0.4"
+        camber="0.03" 
+        dihedral="3.3">
+        <stall aoa="24" width="1" peak="1.3"/>
+        <flap0 start="0.02" end="0.53" lift="1.3" drag="1.5"/>
+        <flap1 start="0.53" end="0.92" lift="1.1" drag="1.0"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/> 
+        <control-input axis="/controls/flight/aileron" control="FLAP1" square="true" split="true"/> 
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+
+        <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
+
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+        <control-output control="FLAP1" prop="/surface-positions/aileron-pos-norm"/>
+
+        <control-speed control="FLAP0" transition-time="30"/>
+        <control-speed control="FLAP1" transition-time="0.1"/>
+   </wing>
+
+   <hstab x="-3.42333" y="0" z="0.71995"
+         chord="1.299" 
+         length="1.646" 
+         taper="0.4"
+         dihedral="2"
+         sweep="3">
+         <stall aoa="16" width="1" peak="1.4"/>
+         <flap0 start="0.1" end="1" lift="1.5" drag="1.2"/>
+
+         <control-input axis="/controls/flight/elevator" square="false" control="FLAP0" />
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" side="left" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-3.42333" y="0" z="0.138"
+         chord="1.171" 
+         length="1.643" 
+         taper="0.5">
+         <stall aoa="16" width="1" peak="1.5"/>
+         <flap0 start="0.05" end="1" lift="1.2" drag="1.1"/>
+
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+  </vstab>
+
+  <!--  Klimov RD-500
+
+                 source       : http://en.wikipedia.org/wiki/Klimov_RD-500
+
+                 type         : Turbojet - Single-stage centrifugal compressor
+                 weight       :  580.7 kg ( 1280 lb )
+                 power        : 3600 lbf
+  -->
+  <jet x="2.8" y="0" z="-0.4720"
+       mass="1280"
+       thrust="3600"
+       n1-idle="30"
+       n1-max="90"
+       n2-idle="35"
+       n2-max="95"
+       egt="850"
+       tsfc="1.39">
+       <actionpt x="-0.5421" y="0" z="-0.8348"/>
+       <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+  </jet>
+
+  <!-- Undercarriage -->
+  <!-- nose -->
+  <gear x="3.21668" y="0" z="-1.73230"
+        retract-time="7"
+        compression="0.30"
+        spring="1"
+        damp="2">
+        <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0="-0.1" dst1="0.1"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <!-- left main -->
+  <gear x="0.65096" y="0.98995" z="-1.66731"
+        retract-time="7"
+        compression="0.30"
+        spring="1"
+        damp="2">
+        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <!-- right main -->
+  <gear x="0.65096" y="-0.98995" z="-1.66731"
+        retract-time="7"
+        compression="0.30"
+        spring="1"
+        damp="2">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+
+        <control-speed control="EXTEND" transition-time="7"/>
+  </gear>
+
+  <!-- Internal tanks 186 Gallons US by wings -->
+  <tank x="0.8" y="-2.3" z="-0.37" jet="true" capacity="1250"/>
+  <tank x="0.8"  y="2.3" z="-0.37" jet="true" capacity="1250"/>
+
+  <weight  x="-0.27" y="0" z="0.01" mass-prop="/yasim/yak23/pilot-lb"/>
+  
+  <!-- Mass displacment -->
+  <ballast x="3" y="0" z="-1.6" mass="300"/>
+
+</airplane>
+
