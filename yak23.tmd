@@ -1098,7 +1098,13 @@
             <[output][FuelFlow][]
                 <[string8][Input][Engine.FuelFlow]>
             >
-
+            <[integral][EngineRotationIntegral][]
+                <[uint32][Input][Engine.N2]>
+            >
+            <[output][EngineRotationAngle][]
+                <[uint32][Input][EngineRotationIntegral.Output]>
+            >
+			
             // Instruments & outputs
 
             <[pitot_tube][PitotTube][]
@@ -1264,12 +1270,16 @@
                 <[string8][GeometryList][ tankl ]>
                 <[uint32][PositionID][LeftExtFuelTankBody.R]>
                 <[uint32][OrientationID][LeftExtFuelTankBody.Q]>
+            >
+            <[graphics_input][EngineRotationInput][]
+                <[uint32][InputID][EngineRotationAngle.Output]>
+                <[float64][Scaling][200.0]>
             >			
-            <[rotatingbodygraphics][Turbine][]
+            <[hingedbodygraphics][Turbine][]
                 <[string8][GeometryList][ eng ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[uint32][AngleID][EngineRotationAngle.Output]>
+                <[string8][InputAngle][EngineRotationInput.Output]>	
                 <[tmvector3d][Axis][-1.0 0.0 0.0]>
                 <[tmvector3d][Pivot][0.046 0.0 -0.8348]>
             >
