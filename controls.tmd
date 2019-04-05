@@ -1,6 +1,62 @@
 <[file][][]
     <[modelmanager][][]
+	
         <[pointer_list_tmcontrol][ControlObjects][]
+		
+            <[control_cylinder][DirectionalGyroAdjust][4]
+                <[string8][Type][knob]>
+                <[vector3_float64][R0][0.322 0.034 0.097]>
+                <[matrix3_float64][B0][ 1.0  0.0 0.0   0.0  1.0  0.0   0.0  0.0  1.0  ]>
+                <[vector3_float64][Direction][1.0 0.0 0.0 ]>
+                <[float64][StepAngle][0.1]>
+                <[control_message][OnRotate][]
+                    <[string8][Message][DirectionalGyroAdjust]>
+                    <[string8][Qualifiers][step]>
+                    <[float64][Value][1.0]>
+                >
+                <[float64][Radius][0.006]>
+                <[float64][Length][0.015]>
+            >
+            <[control_input][ThrottleInput][2]
+                <[uint32][InputID][ServoThrottle.Output]>
+                <[string8][Scaling][-1.570796]>
+            >
+            <[control_rotation][ThrottleRotation][2]
+                <[string8][Input][ThrottleInput.Output]>
+                <[tmvector3d][Axis][0.0 1.0 0.0]>
+                <[tmvector3d][Pivot][0.111360 0.37 -0.062320]>
+            >
+            <[control_cylinder][ThrottleLever][2]
+                <[string8][Type][lever]>
+                <[vector3_float64][R0][ 0.031 0.316 0.019 ]>
+                <[matrix3_float64][B0][ 1.0  0.0 0.0   0.0  1.0  0.0   0.0  0.0  1.0  ]>
+                <[vector3_float64][Direction][0.0 1.0 0.0 ]>
+                <[float64][StepDistance][0.00054]>
+                <[string8][InputTransform][ThrottleRotation.Output]>
+                <[control_message][OnStep][]
+                    <[string8][Message][Controls.Throttle1]>
+                    <[string8][Qualifiers][step]>
+                    <[float64][Value][0.01]>
+                >
+                <[float64][Radius][0.026]>
+                <[float64][Length][0.134]>
+            >
+			
+            // switching panel
+            <[control_cylinder][LeftLandingLightSwitch][15]
+                <[string8][Type][switch toggle]>
+                <[vector3_float64][R0][ 0.331360 0.3 0.031680]>
+                <[matrix3_float64][B0][ 1.0  0.0 0.0   0.0  1.0  0.0   0.0  0.0  1.0  ]>
+                <[vector3_float64][Direction][1 0 0]>
+                <[float64][StepDistance][0.01]>
+                <[control_message][OnStep][]
+                    <[string8][Message][Controls.Lighting.Landing]>
+                    <[string8][Qualifiers][step]>
+                    <[float64][Value][1.0]>
+                >
+                <[float64][Radius][0.004]>
+                <[float64][Length][0.003]>
+            >			
         >
     >
 >
