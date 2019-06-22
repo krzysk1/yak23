@@ -25,6 +25,8 @@
         <[float64][QRatio][0.0]>
         <[float64][QBuild][319]>
         <[float64][QVirgin][1947]>
+        <[tmvector2d][FlapSettings][ (0.0 0.0) (0.33 0.234) (0.67 0.465) (1.0 0.698) ]>
+        <[string8][FlapQualifier][]>		
         <[bool][Airplane][true]>
         <[bool][Flaps][true]>
         <[bool][Jet][true]>
