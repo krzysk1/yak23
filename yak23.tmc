@@ -4,7 +4,7 @@
         <[vec32array][ContactSpheres][ (3.217 0.0 -1.549 0.184) (0.6510 -0.99 -1.381 0.282) (0.6510 0.99 -1.381 0.282) ]>
         <[string8][DisplayName][Yakovlev Yak 23]>
         <[string8][DescriptionTextEN][The Yakovlev Yak-23, NATO reporting name "Flora" was a jet fighter developed in the USSR in the 1940s and used in early 1950s. (from Wikipedia)
-		Converted from FlightGear by Krzysztof Kaniewski, Original 3D model created by Emmanuel Baranger.]>
+Converted from FlightGear by Krzysztof Kaniewski, Original 3D model created by Emmanuel Baranger.]>
 		<[float64][WingSpan][8.7]>
 		<[float64][Mass][1975.8]>
 		<[float64][MaximumSpeed][264.7]>

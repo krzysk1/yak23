@@ -501,7 +501,7 @@
                 <[float64][ClAlpha][6.28]>
                 <[float64][CdAlpha][0.4]>
                 <[float64][CmAlpha][0.0]>
-                <[float64][ClFlap][1.5]>
+                <[float64][ClFlap][2.1]>
                 <[float64][CdFlap][0.005]>
                 <[float64][CmFlap][-0.2]>
                 <[float64][Cd0Base][0.005]>
@@ -521,7 +521,7 @@
                 <[float64][ClAlpha][6.28]>
                 <[float64][CdAlpha][0.4]>
                 <[float64][CmAlpha][0.0]>
-                <[float64][ClFlap][1.5]>
+                <[float64][ClFlap][2.1]>
                 <[float64][CdFlap][0.005]>
                 <[float64][CmFlap][-0.2]>
                 <[float64][Cd0Base][0.005]>
@@ -541,7 +541,7 @@
                 <[float64][ClAlpha][6.28]>
                 <[float64][CdAlpha][0.4]>
                 <[float64][CmAlpha][-0.2]>
-                <[float64][ClFlap][1.5]>
+                <[float64][ClFlap][2.1]>
                 <[float64][CdFlap][0.1]>
                 <[float64][CmFlap][-0.2]>
                 <[float64][Cd0Base][0.005]>
@@ -561,7 +561,7 @@
                 <[float64][ClAlpha][6.28]>
                 <[float64][CdAlpha][0.4]>
                 <[float64][CmAlpha][-0.2]>
-                <[float64][ClFlap][1.5]>
+                <[float64][ClFlap][2.1]>
                 <[float64][CdFlap][0.1]>
                 <[float64][CmFlap][-0.2]>
                 <[float64][Cd0Base][0.005]>
