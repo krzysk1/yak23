@@ -3,18 +3,18 @@
 	
         <[pointer_list_tmcontrol][ControlObjects][]
 		
-            <[control_cylinder][DirectionalGyroAdjust][4]
+            <[control_cylinder][AttitudeAdjust][2]
                 <[string8][Type][knob]>
                 <[vector3_float64][R0][0.322 0.034 0.097]>
-                <[matrix3_float64][B0][ 1.0  0.0 0.0   0.0  1.0  0.0   0.0  0.0  1.0  ]>
-                <[vector3_float64][Direction][1.0 0.0 0.0 ]>
-                <[float64][StepAngle][0.1]>
+                <[matrix3_float64][B0][ 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0 ]>
+                <[vector3_float64][Direction][ 1.0 0.0 0.0 ]>
+                <[float64][StepAngle][0.02]>
                 <[control_message][OnRotate][]
-                    <[string8][Message][DirectionalGyroAdjust]>
+                    <[string8][Message][AttitudeAdjust]>
                     <[string8][Qualifiers][step]>
                     <[float64][Value][1.0]>
                 >
-                <[float64][Radius][0.006]>
+                <[float64][Radius][0.008]>
                 <[float64][Length][0.015]>
             >
             <[control_input][ThrottleInput][2]
@@ -43,7 +43,7 @@
             >
 			
             // switching panel
-            <[control_cylinder][LeftLandingLightSwitch][15]
+            <[control_cylinder][LandingLightSwitch][15]
                 <[string8][Type][switch toggle]>
                 <[vector3_float64][R0][ 0.331360 0.3 0.031680]>
                 <[matrix3_float64][B0][ 1.0  0.0 0.0   0.0  1.0  0.0   0.0  0.0  1.0  ]>
